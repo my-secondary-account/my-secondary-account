@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My Portfolio</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<header>
+		<h1>Ricardo Chávez</h1>
+	</header>
+	
+	<nav>
+		<button onclick="changeLang()">Español</button>
+	</nav>
+	
+	<main>
+		<section id="about">
+			<h2>About Me</h2>
+			<p>Hola am an artificial intelligence researcher with a passion for developing intelligent systems that can learn and adapt to new situations. My research focuses on machine learning, natural language processing, and computer vision.</p>
+		</section>
+		
+		<section id="education">
+			<h2>Education</h2>
+			<ul>
+				<li>PhD in Artificial Intelligence, XYZ University</li>
+				<li>Master's in Computer Science, ABC University</li>
+				<li>Bachelor's in Electrical Engineering, DEF University</li>
+			</ul>
+		</section>
+		
+		<section id="experience">
+			<h2>Experience</h2>
+			<ul>
+				<li>Research Scientist, XYZ Research Lab</li>
+				<li>Postdoctoral Researcher, ABC Institute</li>
+				<li>Research Intern, DEF Corporation</li>
+			</ul>
+		</section>
+	</main>
+	
+	<script>
+		var langBtn = document.querySelector("nav button");
+		
+		function changeLang() {
+			if (langBtn.textContent === "Español") {
+				langBtn.textContent = "English";
+				document.documentElement.lang = "es";
+				document.getElementById("about").innerHTML = `
+					<h2>Sobre mí</h2>
+					<p>Soy un investigador de inteligencia artificial con pasión por desarrollar sistemas inteligentes que puedan aprender y adaptarse a nuevas situaciones. Mi investigación se enfoca en el aprendizaje automático, el procesamiento del lenguaje natural y la visión por computadora.</p>
+				`;
+				document.getElementById("education").innerHTML = `
+					<h2>Educación</h2>
+					<ul>
+						<li>Doctorado en Inteligencia Artificial, Universidad XYZ</li>
+						<li>Maestría en Ciencias de la Computación, Universidad ABC</li>
+						<li>Licenciatura en Ingeniería Eléctrica, Universidad DEF</li>
+					</ul>
+				`;
+				document.getElementById("experience").innerHTML = `
+					<h2>Experiencia</h2>
+					<ul>
+						<li>Científico Investigador, Laboratorio de Investigación XYZ</li>
+						<li>Investigador Postdoctoral, Instituto ABC</li>
+						<li>Pasantía de Investigación, Corporación DEF</li>
+					</ul>
+				`;
+			} else {
+				langBtn.textContent = "Español";
+				document.documentElement.lang = "en";
+				document.getElementById("about").innerHTML = `
+					<h2>About Me</h2>
+					<p>I am an artificial intelligence researcher with a passion for developing intelligent systems that can learn and adapt to new situations. My research focuses on machine learning, natural language processing, and computer vision.</p>
+				`;
+				document.getElementById("education").innerHTML = `
+					<h2>Education</h2>
+					<ul>
+						<li>PhD in Artificial Intelligence, XYZ University</li>
